@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> cgv </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.png">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script>
+        // 띠라다니는 퀵메뉴
+        // .scrollTop : 이동한 위칫값 반환
+        $(function(){
+            $(window).scroll(function(){
+                var scrollTopNum = $(document).scrollTop()+15;
+                if(scrollTopNum<=150){
+                scrollTopNum=150;
+                }
+                $("#quick").stop().animate({top:scrollTopNum},700);
+            });
+            // 슬라이딩
+            var x = 0;
+            setInterval(function(){
+                if(x<2){
+                    x++;}
+                    else{
+                     x=0;
+                    }
+                 var sp = x*(-1200)+"px";
+                 $(".sliderList").animate({left:sp},400);  
+            },3000);
+            $(function(){
+        $(".menu>ul>li, .bg").mouseenter(function(){
+        $(".submenu, .bg").stop().slideDown(); // 보기 
+        });
+        $(".menu>ul>li, .bg").mouseleave(function(){
+        $(".submenu, .bg").stop().slideUp(); // 가리기
+
+});
+
+});
+        });
+    </script>
+</head>
+<body>
+    <!-- #wrap>header>nav>.logo+.topNav+.menu -->
+
+    <div id="wrap">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="#"><img src="images/logo.png" alt="로고"></a>
+                </div>
+                <div class="topNav">
+                    <!-- ul>li*5>a{사이트맵} -->
+                    <ul>
+                        <li><a href="#">사이트맵</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li class="search"><input type="text" placeholder="search" class="input-text">
+                            <input type="image"
+                            src="images/35pxSrBtn.png" alt="검색"
+                            class="input-img"
+                            ></li>
+                    </ul>
+                </div>
+                <div class="menu">
+                    <!-- ul>li*6>a{예매} -->
+                    <ul>
+                        <li>
+                            <a href="#" class="gr">예매</a>
+                            <ul class="submenu">
+                                <li><a href="#">빠른예매</a></li>
+                                <li><a href="#">상영시간표</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">영화</a>
+                            <ul class="submenu">
+                                <li><a href="#">무비차트</a></li>
+                                <li><a href="#">트레일러</a></li>
+                                <li><a href="#">무비파인더</a></li>
+                                <li><a href="#">CGV 아트하우스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">극장</a>
+                            <ul class="submenu">
+                                <li><a href="#">CGV극장</a></li>
+                                <li><a href="#">특별관</a></li>
+                                <li><a href="#">CLUB 서비스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">이벤트</a>
+                            <ul class="submenu">
+                                <li><a href="#">기프트샵</a></li>
+                                <li><a href="#">매거진</a></li>
+                                <li><a href="#">이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">서비스</a>
+                            <ul class="submenu">
+                                <li><a href="#">분실물문의</a></li>
+                                <li><a href="#">단체/대관문의</a></li>
+                                <li><a href="#">공지/뉴스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">고객센터</a>
+                            <ul class="submenu">
+                                <li><a href="#">자주찾는 질문</a></li>
+                                <li><a href="#">이메일 문의</a></li>
+                                <li><a href="#">상담톡 문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="bg"></div>
+                </div>
+            </nav>
+        </header>
+        <!-- section.contents>.banner+.items>.mv*9>a>img -->
+        <section class="contents">
+            <div class="slider">
+                <div class="sliderList">
+                    <div class="sliderImg"><a href="#"><img src="images/slider1.jpg" alt=""></a></div>
+                    <div class="sliderImg"><a href="#"><img src="images/slider2.jpg" alt=""></a></div>
+                    <div class="sliderImg"><a href="#"><img src="images/slider3.jpg" alt=""></a></div>
+                </div>
+            </div>
+            <div class="items">
+                <div class="mv">
+                    <div class="overlay">
+                        <a href="#">
+                        <p>
+                            “때로는 초라한 진실보다 환상적인<br />
+                            거짓이 더 나을 수도 있단다.<br />
+                            더구나 그것이 사랑에 의한 것이라면!”<br />
+                            운명을 보는 마녀, 집채만 한 거인,<br />
+                            시간이 멈춘 유령마을까지…<br />
+                            믿을 수 없는 모험으로 가득한<br />
+                            에드워드 블룸의 이야기. 당신도 믿나요?
+                        </p>
+                        <img src="images/con1.jpg" alt="영화1">
+                            <div class="btn">
+                                <span class="material-icons"
+                                title="좋아요">
+                                    &#xe8dc;
+                                </span>
+                                <span class="material-icons"
+                                title="sns공유">
+                                    &#xe80d;
+                                </span>
+                                <span class="material-icons"
+                                title="예매하기">
+                                    &#xe878;
+                            </div>
+                        </a>
+                        </div>
+                    <span class=mname> 
+                    빅 피쉬
+                    </span>
+                    <span class=article>
+                        개봉일 2021.05.12</span>
+                    </div>
+                <div class="mv">
+                    <div class="overlay">
+                        <a href="#">
+                        <p>
+                            나이도, 성격도, 살아온 환경도 다른<br/>
+                            ‘소라’ & ‘미레’ & ‘레이카’.<br />
+                            하지만 꼬마 마법사 레미를<br /> 어린 시절 추억으로 간직하고 있다는<br />
+                            공통점이 있다.<br />
+                            서로 다른 세 사람을 연결해준 마법같은 인연.<br />
+                            어른이 되느라 바빴던 그녀들은<br /> 잠시 잊고 있었던 것들을 다시금 떠올리게 되는데...<br />
+                             지금, ‘레미’의 마법이 다시 시작된다!
+                        </p>
+                        <img src="images/con2.jpg" alt="영화2">
+                            <div class="btn">
+                                <span class="material-icons"
+                                title="좋아요">
+                                    &#xe8dc;
+                                </span>
+                                <span class="material-icons"
+                                title="sns공유">
+                                    &#xe80d;
+                                </span>
+                                <span class="material-icons"
+                                title="예매하기">
+                                    &#xe878;
+                            </div>
+                        </a>
+                        </div>
+                    <span class=mname> 꼬마 마법사 레미 : 견습 마법사를 찾아서 </span>
+                    <span class=article>
+                        개봉일 2021.05.19</span>
+</div>
+                <div class="mv">                    <div class="overlay">
+                    <a href="#">
+                    <p>
+                        거리를 떠돌았지만 패션을 향한<br />
+                        나의 열정만큼은 언제나 진심이었거든<br />
+                        꿈을 이룰 것 같았던 순간도 잠시,<br />
+                        세상에 남작 부인이 ‘그런 사람’이었을 줄이야…<br />
+                        그래서 난 내가 누군지 보여주기로 했어<br />
+                        잘가, 에스텔라<br />
+                        난 이제 크루엘라야!<br />
+                    </p>
+                    <img src="images/con3.jpg" alt="영화3">
+                        <div class="btn">
+                            <span class="material-icons"
+                            title="좋아요">
+                                &#xe8dc;
+                            </span>
+                            <span class="material-icons"
+                            title="sns공유">
+                                &#xe80d;
+                            </span>
+                            <span class="material-icons"
+                            title="예매하기">
+                                &#xe878;
+                        </div>
+                    </a>
+                    </div>
+                <span class=mname> 크루엘라 </span>
+                <span class=article>
+                    개봉일 2021.05.26</span>
+            </div>
+                <div class="mv">                    
+                    <div class="overlay">
+                    <a href="#">
+                    <p>
+                        서부 개척시대 이전인 19세기 아메리카 대륙,<br />
+                        사냥꾼인 휴 글래스(레오나르도 디카프리오)는<br />
+                        아들 호크를 데리고<br />
+                        동료들과 함께 사냥하던 중<br />
+                        회색곰에게 습격 당해 사지가 찢긴다.<br />
+                        비정한 동료 존 피츠 제럴드(톰 하디)는<br />
+                        아직 살아 있는 휴를 죽이려 하고,<br />
+                        눈 앞에서 하나뿐인 아들의 죽음을 목격한 휴는<br />
+                        처절한 복수를 위해 부상 입은 몸으로<br />
+                        존의 뒤를 쫓기 시작하는데…
+                    </p>
+                    <img src="images/con4.jpg" alt="영화4">
+                        <div class="btn">
+                            <span class="material-icons"
+                            title="좋아요">
+                                &#xe8dc;
+                            </span>
+                            <span class="material-icons"
+                            title="sns공유">
+                                &#xe80d;
+                            </span>
+                            <span class="material-icons"
+                            title="예매하기">
+                                &#xe878;
+                        </div>
+                    </a>
+                    </div>
+                <span class=mname>레버넌트</span>
+                <span class=article>
+                    개봉일 2016.01.14</span>
+</div>
+                <div class="mv">                    
+                    <div class="overlay">
+                    <a href="#">
+                    <p>
+                        도미닉(빈 디젤)은 자신과 가장 가까웠던 형제<br />
+                         제이콥(존 시나)이 사이퍼(샤를리즈 테론)와 연합해<br />
+                        전 세계를 위기로 빠트릴<br />
+                        위험천만한 계획을 세운다는<br />
+                        사실을 알게 되고, 이를 막기 위해<br />
+                        다시 한 번 패밀리들을 소환한다.
+                    </p>
+                    <img src="images/con5.jpg" alt="영화5">
+                        <div class="btn">
+                            <span class="material-icons"
+                            title="좋아요">
+                                &#xe8dc;
+                            </span>
+                            <span class="material-icons"
+                            title="sns공유">
+                                &#xe80d;
+                            </span>
+                            <span class="material-icons"
+                            title="예매하기">
+                                &#xe878;
+                        </div>
+                    </a>
+                    </div>
+                <span class=mname>분노의 질주 더 얼티메이트</span>
+                <span class=article>
+                    개봉일 2021.05.19</span>
+</div>
+                <div class="mv">                    
+                    <div class="overlay">
+                    <a href="#">
+                    <p>
+                        "미나리는 어디서든 잘 자라" 낯선 미국,<br />
+                        아칸소로 떠나온 한국 가족.<br />
+                        가족들에게 뭔가 해내는 걸 보여주고 싶은<br />
+                        아빠 '제이콥'(스티븐 연)은 자신만의<br />
+                        농장을 가꾸기 시작하고 엄마 <br />
+                        '모니카'(한예리)도 다시 일자리를 찾는다. 
+                    </p>
+                    <img src="images/con6.jpg" alt="영화6">
+                        <div class="btn">
+                            <span class="material-icons"
+                            title="좋아요">
+                                &#xe8dc;
+                            </span>
+                            <span class="material-icons"
+                            title="sns공유">
+                                &#xe80d;
+                            </span>
+                            <span class="material-icons"
+                            title="예매하기">
+                                &#xe878;
+                        </div>
+                    </a>
+                    </div>
+                <span class=mname>미나리
+                </span>
+                <span class=article>
+                개봉일 2021.03.03</span>
+</div>
+            </div>
+        </section>
+        <footer>
+            <div class="blogo"><a href="#"><img src="images/blogo.png" alt="하단로고"></a></div>
+            <div class="bmenu">
+            <span>
+                (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)<br />
+대표이사 : 허민회 사업자등록번호 : 104-81-45690 통신판매업신고번호 : 2017-서울용산-0662 사업자정보확인<br />
+호스팅사업자 : CJ올리브네트웍스 개인정보보호 책임자 : 심준범 대표이메일 : cjcgvmaster@cj.net CGV고객센터 : 1544-1122<br />
+            </span>
+        </div>
+        <div class="sns">
+            <ul>
+                <li><a href="#" class="f"></a></li>
+                <li><a href="#" class="t"></a></li>
+                <li><a href="#" class="b"></a></li>
+                <li><a href="#" class="y"></a></li>
+                <li><a href="#" class="i"></a></li>
+            </ul>
+        </div>
+        </footer>
+    <div id="quick">
+        <ul>
+            <li><a href="#" class="quick_1"><img src="images/icon1.png" 
+                onmouseover="this.src='images/icon1_hover.png'" onmouseout="this.src='images/icon1.png'"alt="아이콘1"></a></li>
+            <li><a href="#" class="quick_2"><img src="images/icon2.png"
+                onmouseover="this.src='images/icon2_hover.png'" onmouseout="this.src='images/icon2.png'"
+                alt="아이콘2"></a></li>
+            <li><a href="#" class="quick_3"><img src="images/icon3.png" 
+                onmouseover="this.src='images/icon3_hover.png'" onmouseout="this.src='images/icon3.png'"
+                alt="아이콘3"></a></li>
+            <li><a href="#" class="quick_4"><img src="images/icon4.png" 
+                onmouseover="this.src='images/icon4_hover.png'" onmouseout="this.src='images/icon4.png'"
+                alt="아이콘4"></a></li>
+            <li><a href="#" class="quick_5"><img src="images/icon5.png"
+                onmouseover="this.src='images/icon5_hover.png'" onmouseout="this.src='images/icon5.png'"
+                alt="아이콘5"></a></li>
+            <li><a href="#" class="quick_6"><img src="images/icon6.png"
+                onmouseover="this.src='images/icon6_hover.png'" onmouseout="this.src='images/icon6.png'"
+                alt="아이콘6"></a></li>
+        </ul>
+    </div>
+    </div>
+
+</body>
+</html>
